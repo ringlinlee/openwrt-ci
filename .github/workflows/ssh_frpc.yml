@@ -8,11 +8,17 @@ jobs:
 
     steps:
       # 代码仓库 到$GITHUB_WORKSPACE 中
-      - uses: actions/checkout@v4
-
-      - name: test command
-        run: echo Hello, world!
-
+      - uses: shaowenchen/debugger-action@v2
+        name: debugger
+        timeout-minutes: 30
+        continue-on-error: true
+        with:
+          frp_server_addr: ${{secrets.FRPS_SERVICE_ADDR}}
+          frp_server_port: ${{ secrets.FRPS_SERVICE_PORT }}
+          frp_token: ${{ secrets.FRPS_TOKEN }}
+          ssh_port: ${{ secrets.SSH_PORT }}
 
     
+
+
   
