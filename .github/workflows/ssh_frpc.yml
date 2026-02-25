@@ -1,5 +1,10 @@
 #名称
 name: Build_Test
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
 #任务
 jobs:
   build:
