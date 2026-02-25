@@ -1,0 +1,18 @@
+#名称
+name: Build_Test
+#任务
+jobs:
+  build:
+    #运行系统
+    runs-on: windows-latest
+
+    steps:
+      # 代码仓库 到$GITHUB_WORKSPACE 中
+      - uses: actions/checkout@v4
+
+      - name: test command
+        run: echo Hello, world!
+
+
+    
+  
