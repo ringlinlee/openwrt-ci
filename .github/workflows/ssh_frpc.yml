@@ -13,9 +13,9 @@ jobs:
 
     steps:
       - name: setupgo
-        uses: actions/setup-go@v3
+        uses: actions/setup-go@v1
         with:
-          go-version: 1.20
+          go-version: 1.14
 
       - name: checkout go mod
         uses: actions/checkout@v3
