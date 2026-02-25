@@ -12,25 +12,25 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - name: setupgo
-        uses: actions/setup-go@v1
-        with:
-          go-version: 1.14
+        - name: Set up Go 1.14
+          uses: actions/setup-go@v1
+          with:
+            go-version: 1.14
 
-      - name: checkout go mod
-        uses: actions/checkout@v3
+        - name: Check out code into the Go module directory
+          uses: actions/checkout@v2
 
 
       # 代码仓库 到$GITHUB_WORKSPACE 中
-      - uses: shaowenchen/debugger-action@v2
-        name: debugger
-        timeout-minutes: 30
-        continue-on-error: true
-        with:
-          frp_server_addr: ${{secrets.FRPS_SERVICE_ADDR}}
-          frp_server_port: ${{ secrets.FRPS_SERVICE_PORT }}
-          frp_token: ${{ secrets.FRPS_TOKEN }}
-          ssh_port: ${{ secrets.SSH_PORT }}
+        - uses: shaowenchen/debugger-action@v2
+          name: debugger
+          timeout-minutes: 30
+          continue-on-error: true
+          with:
+            frp_server_addr: ${{secrets.FRPS_SERVICE_ADDR}}
+            frp_server_port: ${{ secrets.FRPS_SERVICE_PORT }}
+            frp_token: ${{ secrets.FRPS_TOKEN }}
+            ssh_port: ${{ secrets.SSH_PORT }}
 
     
 
