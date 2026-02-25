@@ -9,7 +9,7 @@ on:
 jobs:
   build:
     #运行系统
-    runs-on: windows-latest
+    runs-on: ubuntu-latest
 
     steps:
       # 代码仓库 到$GITHUB_WORKSPACE 中
